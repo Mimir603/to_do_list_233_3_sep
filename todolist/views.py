@@ -46,7 +46,7 @@ def category(request):
                 try:
                     categ = Category.objects.filter(id=int(check[i]))
                     categ.delete()
-                except BaseException:
+                except:
                     return redirect('<h1>Сначала удалите карточки с этими категориями</h1>')
 
     return render(request, 'category.html', {'categories': categories})
